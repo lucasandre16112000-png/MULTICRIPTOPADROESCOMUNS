@@ -1,0 +1,104 @@
+{
+    "api_configs": {
+        "EVM_QuickNode": {
+            "url": "https://rpc.ankr.com/http/eth_mainnet",
+            "rps": 100,
+            "rate_limit_range": [12, 22],
+            "limit_hour": 405000,
+            "limit_day": 9798000,
+            "limit_month": -1
+        },
+        "EVM_Alchemy": {
+            "url": "https://eth-mainnet.g.alchemy.com/v2/Ab7K09ATBJkK1QOINc25u",
+            "rps": 24,
+            "rate_limit_range": [3, 5],
+            "limit_hour": 88000,
+            "limit_day": 995000,
+            "limit_month": 29995000
+        },
+        "ETH_Etherscan": {
+            "url": "https://api.etherscan.io/api",
+            "rps": 2,
+            "rate_limit_range": [2, 4],
+            "limit_hour": 17500,
+            "limit_day": 95000,
+            "limit_month": 2995000
+        },
+        "SOL_Helius": {
+            "url": "https://mainnet.helius-rpc.com/?api-key=0d924ae8-981e-452a-b2b6-aa6a03345e03",
+            "rps": 5,
+            "rate_limit_range": [3, 7],
+            "limit_hour": 35995,
+            "limit_day": 855000,
+            "limit_month": 995000
+        },
+        "SOL_Public": {
+            "url": "https://api.mainnet-beta.solana.com",
+            "rps": 3,
+            "rate_limit_range": [2, 5],
+            "limit_hour": 14000,
+            "limit_day": 340000,
+            "limit_month": -1
+        },
+        "XRP_Public": {
+            "url": "https://s1.ripple.com:51234/",
+            "rps": 13,
+            "rate_limit_range": [8, 15],
+            "limit_hour": 54000,
+            "limit_day": 1320000,
+            "limit_month": -1
+        },
+        "LTC_Space": {
+            "url": "https://litecoinspace.org/api",
+            "rps": 7,
+            "rate_limit_range": [3, 8],
+            "limit_hour": 31000,
+            "limit_day": 765000,
+            "limit_month": -1
+        },
+        "TRX_Grid": {
+            "url": "https://api.trongrid.io/v1",
+            "rps": 3,
+            "rate_limit_range": [1, 10],
+            "limit_hour": 300,
+            "limit_day": 100000,
+            "limit_month": 3000000
+        },
+        "DOT_OnFinality": {
+            "url": "https://polkadot.api.onfinality.io/public-ws",
+            "rps": 30,
+            "rate_limit_range": [20, 90],
+            "limit_hour": 140000,
+            "limit_day": 390000,
+            "limit_month": 11000000
+        },
+        "DOT_Parity": {
+            "url": "https://rpc.polkadot.io",
+            "rps": 5,
+            "rate_limit_range": [3, 9],
+            "limit_hour": 34000,
+            "limit_day": 830000,
+            "limit_month": -1
+        },
+        "DOT_Dwellir": {
+            "url": "https://polkadot-rpc.dwellir.com",
+            "rps": 4,
+            "rate_limit_range": [3, 8],
+            "limit_hour": 30000,
+            "limit_day": 745000,
+            "limit_month": -1
+        }
+    },
+    "saque_enderecos": {
+        "ETH": "0x0766F47b1fF277e2928ba4bdadAe75747B484Bc0",
+        "USDT": "0x0766F47b1fF277e2928ba4bdadAe75747B484Bc0",
+        "SOL": "HEUkpS4r75An28qKW3Uzg4WEp1haKWiRoPu6auLApeaM",
+        "XRP": "rpquxNCCrz8EVbUHWKn5zqS9Kndv7XijUE",
+        "DOT": "169HRuTfb5ZmLDE2xa2tpVNUHhawm5vYNzqL1kGboMGNF3Wm",
+        "MATIC": "0x0766F47b1fF277e2928ba4bdadAe75747B484Bc0",
+        "LTC": "LQVQEfPaVtYWXzmk1GC6T2LsiFyAkKQSNU",
+        "TRX": "TVBGrwvypFpcVQhSwVrK9hMkWMN8FjioWQ",
+        "AVAX": "0x0766F47b1fF277e2928ba4bdadAe75747B484Bc0",
+        "BNB": "0x0766F47b1fF277e2928ba4bdadAe75747B484Bc0"
+    }
+}
