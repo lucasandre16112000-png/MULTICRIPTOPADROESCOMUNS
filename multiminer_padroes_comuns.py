@@ -96,16 +96,8 @@ class Stats:
         self.total_verificadas = 0
         self.total_com_saldo = 0
         
-        # Status das APIs
-        self.api_stats = {
-            "EVM_QuickNode": {"ok": 0, "err": 0, "ativa": True},
-            "EVM_Alchemy": {"ok": 0, "err": 0, "ativa": True},
-            "ETH_Etherscan": {"ok": 0, "err": 0, "ativa": True},
-            "SOL_Helius": {"ok": 0, "err": 0, "ativa": True},
-            "SOL_Public": {"ok": 0, "err": 0, "ativa": True},
-            "XRP_Public": {"ok": 0, "err": 0, "ativa": True},
-            "LTC_Space": {"ok": 0, "err": 0, "ativa": True},
-        }
+        # Status das APIs (dinâmico)
+        self.api_stats = {}
         
         # Erros detalhados
         self.erros_por_tipo = {}
@@ -143,13 +135,15 @@ class Stats:
     
     def registrar_sucesso_api(self, api_name: str):
         """Registra sucesso de uma API"""
-        if api_name in self.api_stats:
-            self.api_stats[api_name]["ok"] += 1
+        if api_name not in self.api_stats:
+            self.api_stats[api_name] = {"ok": 0, "err": 0, "ativa": True}
+        self.api_stats[api_name]["ok"] += 1
     
     def registrar_erro_api(self, api_name: str, tipo_erro: str):
         """Registra erro de uma API"""
-        if api_name in self.api_stats:
-            self.api_stats[api_name]["err"] += 1
+        if api_name not in self.api_stats:
+            self.api_stats[api_name] = {"ok": 0, "err": 0, "ativa": True}
+        self.api_stats[api_name]["err"] += 1
         
         if tipo_erro not in self.erros_por_tipo:
             self.erros_por_tipo[tipo_erro] = 0
@@ -569,7 +563,8 @@ async def main():
     if "concurrency" in state:
         controlador.concurrency_atual = state["concurrency"]
     
-    dist_evm = DistribuidorAPIs([limiters["EVM_QuickNode"], limiters["EVM_Alchemy"]], controlador)
+    # Usar todas as APIs disponíveis no config
+    dist_evm = DistribuidorAPIs(list(limiters.values()), controlador)
     verificadores = {"EVM": VerificadorSaldoEVM(dist_evm, "EVM")}
     
     last_save = 0
